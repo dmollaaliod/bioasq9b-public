@@ -24,15 +24,22 @@ set up the system.
 
 ## Reading
 
-* BioASQ9b paper (TBA)
+If you use this code, please cite the following paper:
+
+D. Mollá, U. Khanna, D. Galat, V. Nguyen, M. Rybinski (2021). Query-Focused Extractive Summarisation for
+Finding Ideal Answers to Biomedical and COVID-19
+Questions. *CLEF2021 Working Notes*. [[local copy](CLEF2021Paper.pdf)]
 
 ## Examples of runs using pre-learnt models
 
 To get the pre-learnt models used in the BioASQ8b runs, please email
 diego.molla-aliod@mq.edu.au. The following models are available:
-    * task8b_bert_model_32.pt - for neural classification with BERT 
-    * task8b_biobert_model_32.pt - for neural classification with BioBERT 
-    * task8b_distilbert_model_32.pt - for neural classification with DistilBERT 
+
+* task8b_bert_model_32.pt - for BERT 
+* task8b_biobert_model_32.pt - for BioBERT 
+* task8b_distilbert_model_32.pt - for DistilBERT 
+* task9b_albert_model_32.pt - for ALBERT
+* task9b_qaalbert9b_model_32.pt - for QA_ALBERT
 
 
 ### BERT
@@ -54,33 +61,14 @@ rm diego.out; for F in 1 2 3 4 5 6 7 8 9 10; do python classificationneural.py -
 
 And similar for the other neural approaches.
 
-| Method | Batch size | Dropout | Epochs | Mean SU4 F1 | Std SU4 F1 |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| BERT  | 32 | 0.8 | 8 |  |  |
-| BioBERT | 32 | 0.7 | 1 |  |  |
-| DistilBERT | 32 | 0.6 | 1 |  |  |
-
-## Reinforcement Learning (PPO)
-
-Requires installing stable baselines (and huggingface transformers if using BERT)
-```
-pip install stable-baselines
-pip install transformers
-```
-
-PPO (load best run bioasq8b from root directory):
-```
-python -m rl.ppo_stablebaselines --8b --observe EMBEDDINGS --model PPO2 --batch_size=1000 --append _best --bestaction --load TEST
-```
-PPO (generate best run bioasq8b from root directory):
-```
-python -m rl.ppo_stablebaselines --8b --observe EMBEDDINGS --model PPO2 --batch_size=1000 --append _best --bestaction
-```
-PPO (BERT bioasq8b):
-```
-python -m rl.ppo_stablebaselines --8b --observe BERT --model PPO2 --batch_size=1000 --bestaction
-```
-
+| Method | Batch size | Dropout | Epochs | Mean SU4 F1 |
+| --- | ---: | ---: | ---: | ---: |
+| BERT  | 32 | 0.8 | 8 | 0.2779 |  
+| BioBERT | 32 | 0.7 | 1 | 0.2798 |  
+| DistilBERT | 32 | 0.6 | 1 | 0.2761 | 
+| ALBERT | 32 |0.5 | 5 | 0.2866 |
+| ALBERT-SQuAD | 32 | 0.7 | 5 | 0.2846 |
+| QA_ALBERT | 32 | 0.4 | 5 | 0.2875 |
 
 ## Who do I talk to? ###
 
