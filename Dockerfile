@@ -12,7 +12,7 @@ RUN perl -MCPAN -e 'install XML::DOM'
 RUN mkdir /root/rouge/models
 RUN mkdir /root/rouge/summaries
 
-RUN pip3 install -U tensorflow
+RUN pip3 install -U torch
 
 ADD *.py /root/code/
 ADD nnmodels/*.py /root/code/nnmodels/

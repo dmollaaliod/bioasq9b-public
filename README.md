@@ -35,9 +35,9 @@ Questions. *CLEF2021 Working Notes*. [[local copy](CLEF2021Paper.pdf)]
 To get the pre-learnt models used in the BioASQ8b runs, please email
 diego.molla-aliod@mq.edu.au. The following models are available:
 
-* task8b_bert_model_32.pt - for BERT 
-* task8b_biobert_model_32.pt - for BioBERT 
-* task8b_distilbert_model_32.pt - for DistilBERT 
+* task9b_bert_model_32.pt - for BERT 
+* task9b_biobert_model_32.pt - for BioBERT 
+* task9b_distilbert_model_32.pt - for DistilBERT 
 * task9b_albert_model_32.pt - for ALBERT
 * task9b_qaalbert9b_model_32.pt - for QA_ALBERT
 
