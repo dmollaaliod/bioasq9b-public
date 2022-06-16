@@ -12,7 +12,7 @@ participation in BioASQ 9b.
 Apart from the code in this repository, you will need the following files:
 
 * `training9b.json` - available from [BioASQ](http://www.bioasq.org/)
-* `rouge_9b.csv` - available [here](https://drive.google.com/drive/folders/1DxqQWO1O5nNUJ5bc3SyHzH622A8gHJM9?usp=sharing). If you want to create is using your own data, you can run the following overnight:
+* `rouge_9b.csv` - available [here](https://drive.google.com/drive/folders/1DxqQWO1O5nNUJ5bc3SyHzH622A8gHJM9?usp=sharing). If you want to create it using your own data, you can run the following overnight:
 ```
 >>> from classificationneural import saveRouge
 >>> saveRouge('training9b.json', 'rouge_9b.csv',
